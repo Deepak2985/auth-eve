@@ -1,0 +1,19 @@
+<h3 class="text-center display-4 mt-3">Premium Member Events</h3>
+<div class="alert alert-danger" role="alert" *ngIf="err">
+  Could not find the events.
+ </div>
+<div class="row"  *ngIf="events && events.length">
+    <div class="col-sm-6" *ngFor="let event of events">
+        <div class="card-deck mt-4" >
+            <div class="card border-dark" >
+                <div class="card-header">{{event.name}}</div>
+              <div class="card-body text-dark">
+                <p class="card-text">{{event.description}}</p>
+                <p class="card-text"><small class="text-muted">{{event.date}}</small></p>
+                <a href="#" class="btn btn-dark">Register</a>
+              </div>
+            </div>
+
+          </div>
+    </div>
+  </div>

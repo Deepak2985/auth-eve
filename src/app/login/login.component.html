@@ -1,0 +1,31 @@
+<div class="row mt-5">
+    <form class="mx-auto card p-5 shadow" [formGroup]="loginForm" (ngSubmit)="login()">
+      <h4 class="mb-4 display-4">Login</h4>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+        class="form-control" formControlName="email" autocomplete="off" required placeholder="Enter email">
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required || f.email.errors.email"> Email is required</div>
+      </div>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" autocomplete="off" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+        class="form-control" formControlName="password"  required aria-describedby="passwordHelpInline"  placeholder="Password">
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required"> Password is required</div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-dark btn-block">Login</button>
+
+    </form>
+
+  </div>
+  <div class="row mt-3">
+      <p class="mx-auto">Don't have an account?
+       <a [routerLink]="['/register']" routerLinkActive="router-link-active" >Sign Up</a>
+      </p>
+  </div>
