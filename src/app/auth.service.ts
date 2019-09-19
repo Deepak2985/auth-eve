@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class AuthService {
 
   private registerUrl = "https://auth-eve.herokuapp.com/register";
-  private loginUrl = "https://auth-eve.herokuapp.com//login";
+  private loginUrl = "https://auth-eve.herokuapp.com/login";
 
   constructor(private httpClient: HttpClient,
               private router: Router) { }
