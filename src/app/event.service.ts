@@ -6,8 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class EventService {
 
-  private eventUrl: string = "http://localhost:3000/events";
-  private specialEventUrl :string = "http://localhost:3000/special-events";
+  private eventUrl: string = "https://auth-eve.herokuapp.com/events";
+  private specialEventUrl :string = "https://auth-eve.herokuapp.com/special-events";
 
   constructor(private _http: HttpClient) { }
 
