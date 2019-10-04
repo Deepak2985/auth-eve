@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ctl-login',
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,
               private authService: AuthService,
               private toastrService: ToastrService,
+              private router: Router
     ) { }
 
   ngOnInit() {
@@ -32,9 +34,12 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.authService.login(this.loginForm.value).
-    subscribe(res => {console.log(res)},
-              err => { this.toastrService.error(err.error);}
-              );
+    subscribe(res => {
+      localStorage.setItem('token', res.token);
+      this.router.navigate(['/special-events']);
+    },
+              err => { this.toastrService.error(err.error);
+              });
   }
 
 }
