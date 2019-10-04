@@ -12,6 +12,8 @@ import { LoginComponent } from './login/login.component';
 import { EventsComponent } from './events/events.component';
 import { SpecialEventsComponent } from './special-events/special-events.component';
 import { EventService } from './event.service';
+import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 
 
 
@@ -21,7 +23,9 @@ import { EventService } from './event.service';
     RegisterComponent,
     LoginComponent,
     EventsComponent,
-    SpecialEventsComponent
+    SpecialEventsComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,9 @@ import { EventService } from './event.service';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot({
+      maxOpened: 1
+    })
   ],
   providers: [EventService],
   bootstrap: [AppComponent]

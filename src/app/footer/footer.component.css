@@ -1,0 +1,10 @@
+div {
+  height: 38px;
+  line-height: 38px;
+  color: white;
+  margin-top: 1rem;
+}
+
+div>a {
+  color: white;
+}

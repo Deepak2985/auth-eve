@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   submitted = false;
   constructor(private formBuilder: FormBuilder,
               private authService: AuthService,
-              private toastrService: ToastrService
+              private toastrService: ToastrService,
     ) { }
 
   ngOnInit() {
@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.authService.login(this.loginForm.value).
-    subscribe(res => {},
+    subscribe(res => {console.log(res)},
               err => { this.toastrService.error(err.error);}
               );
   }
